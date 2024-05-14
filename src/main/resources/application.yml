@@ -2,7 +2,7 @@ server:
   tomcat:
     url-encoding: UTF-8
   servlet:
-    context-path: /
+    context-path: /baseinfo
 spring:
   application:
     name: baseinfo
