@@ -12,7 +12,7 @@ server:
     threads:
       max: 200
 # AWS RDS 변경
-spring경
+spring
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://rds.cluster-c92ik0osefy8.ap-northeast-2.rds.amazonaws.com:3306/test
