@@ -4,40 +4,20 @@
 server:
   port: 8080
   servlet:
-    context-path: /
+    context-path: /baseinfo
   tomcat:
     connection-timeout: 5s
     max-connections: 1000
     accept-count: 20
     threads:
       max: 200
-spring:
-  h2:
-    # h2 DB
-    console:
-      enabled: true
-      path: /h2-console
-  # Database Platform
-  sql:
-    init:
-      platform: h2
-      mode: embedded
+# AWS RDS 변경
+spring경
   datasource:
-    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:h2:mem:testdb;IGNORECASE=TRUE #jdbc:log4jdbc:tibero:thin:@localhost:8640:POCICISORDDB
-    username: sa
-    password: ENC(hk5/B+52K9XaD+BqzpFaHQ==)
-    # h2 DB
-    generate-unique-name: false
-    hikari:
-      pool-name: hikari-cp
-      maximum-pool-size: 30
-      minimum-idle: 2
-      data-source-properties:
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
-        prepStmtCacheSqlLimit: 2048
-        useServerPrepStmts: true
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://rds.cluster-c92ik0osefy8.ap-northeast-2.rds.amazonaws.com:3306/test
+    username: admin
+    password: New1234!
 
 # spring boot - actuator expose
 management:
